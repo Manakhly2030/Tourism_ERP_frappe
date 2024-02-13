@@ -1,24 +1,25 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{name}-{city}-{country}-{##}",
+ "autoname": "format:{name1}-{city}-{country}-{##}",
  "creation": "2024-02-13 12:44:35.868061",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "details_section",
   "name1",
-  "photos",
   "rooms_available",
   "column_break_sgtt",
   "status",
+  "photos",
   "contact_information_section",
   "address",
   "city",
   "country",
   "column_break_zcmg",
-  "contact_phone",
-  "email"
+  "phone",
+  "email",
+  "route"
  ],
  "fields": [
   {
@@ -93,26 +94,39 @@
   {
    "fieldname": "rooms_available",
    "fieldtype": "Table MultiSelect",
+   "in_filter": 1,
+   "in_standard_filter": 1,
    "label": "Rooms Available",
    "options": "Room Type Link"
   },
   {
-   "allow_in_quick_entry": 1,
-   "fieldname": "contact_phone",
-   "fieldtype": "Link",
-   "label": "Phone",
-   "options": "Contact"
+   "fetch_from": "address.email_id",
+   "fetch_if_empty": 1,
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email"
   },
   {
-   "fieldname": "email",
-   "fieldtype": "Link",
-   "label": "Email",
-   "options": "Contact Email"
+   "allow_in_quick_entry": 1,
+   "fetch_from": "address.phone",
+   "fetch_if_empty": 1,
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Phone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
   }
  ],
+ "has_web_view": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-13 14:31:41.567711",
+ "modified": "2024-02-13 16:14:59.876208",
  "modified_by": "Administrator",
  "module": "Tourism Erp",
  "name": "Accommodation",
@@ -132,6 +146,7 @@
    "write": 1
   }
  ],
+ "route": "accommodations",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []
