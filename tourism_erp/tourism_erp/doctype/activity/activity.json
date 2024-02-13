@@ -7,8 +7,8 @@
  "engine": "InnoDB",
  "field_order": [
   "activity_name",
-  "price_per_person",
   "duration",
+  "price_per_person",
   "address",
   "city",
   "country",
@@ -17,7 +17,8 @@
   "tags_table_multiselect",
   "days_open",
   "opening_time",
-  "closing_time"
+  "closing_time",
+  "booking_url_optional"
  ],
  "fields": [
   {
@@ -33,17 +34,22 @@
   {
    "fieldname": "opening_time",
    "fieldtype": "Time",
-   "label": "Opening Time"
+   "in_list_view": 1,
+   "label": "Opening Time",
+   "reqd": 1
   },
   {
    "fieldname": "closing_time",
    "fieldtype": "Time",
-   "label": "Closing Time"
+   "in_list_view": 1,
+   "label": "Closing Time",
+   "reqd": 1
   },
   {
    "fieldname": "days_open",
-   "fieldtype": "Data",
-   "label": "Days Open"
+   "fieldtype": "Table MultiSelect",
+   "label": "Days Open",
+   "options": "Days_link"
   },
   {
    "allow_in_quick_entry": 1,
@@ -60,7 +66,9 @@
    "fetch_from": "address.city",
    "fieldname": "city",
    "fieldtype": "Data",
-   "label": "City"
+   "in_list_view": 1,
+   "label": "City",
+   "reqd": 1
   },
   {
    "fetch_from": "address.country",
@@ -75,20 +83,28 @@
    "options": "Address"
   },
   {
+   "default": "0",
    "fieldname": "price_per_person",
    "fieldtype": "Currency",
-   "label": "Pricing Per Person"
+   "label": "Pricing Per Person (Approx)"
   },
   {
    "fieldname": "activity_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Activity Name",
+   "reqd": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "booking_url_optional",
+   "fieldtype": "Attach",
+   "label": "Booking URL (Optional)"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-13 14:50:17.815346",
+ "modified": "2024-02-13 16:50:32.157633",
  "modified_by": "Administrator",
  "module": "Tourism Erp",
  "name": "Activity",
