@@ -1,0 +1,79 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-02-13 15:39:33.587387",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_h2kl",
+  "contact_person",
+  "contact_type",
+  "contact_detail",
+  "primary",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_h2kl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "contact_person",
+   "fieldtype": "Data",
+   "label": "Contact Person "
+  },
+  {
+   "fieldname": "contact_type",
+   "fieldtype": "Select",
+   "label": "Contact Type",
+   "options": "Mail\nPhone\nFax No"
+  },
+  {
+   "fieldname": "contact_detail",
+   "fieldtype": "Data",
+   "label": "Contact Detail"
+  },
+  {
+   "default": "0",
+   "fieldname": "primary",
+   "fieldtype": "Check",
+   "label": "Primary"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Contact Information",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-02-13 15:41:33.664391",
+ "modified_by": "Administrator",
+ "module": "Tourism Erp",
+ "name": "Contact Information",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
