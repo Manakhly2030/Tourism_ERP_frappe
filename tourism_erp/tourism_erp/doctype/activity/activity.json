@@ -1,36 +1,29 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:activity_name",
  "creation": "2024-02-13 12:06:31.579105",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "name1",
-  "location_link_city",
-  "pricing",
+  "activity_name",
+  "price_per_person",
   "duration",
-  "tags_table_multiselect",
+  "address",
+  "city",
+  "country",
   "column_break_stmh",
   "description",
+  "tags_table_multiselect",
   "days_open",
   "opening_time",
   "closing_time"
  ],
  "fields": [
   {
-   "fieldname": "name1",
-   "fieldtype": "Data",
-   "label": "Name"
-  },
-  {
    "fieldname": "description",
    "fieldtype": "Small Text",
    "label": "Description"
-  },
-  {
-   "fieldname": "location_link_city",
-   "fieldtype": "Data",
-   "label": "Location (Link Address)"
   },
   {
    "fieldname": "duration",
@@ -48,31 +41,58 @@
    "label": "Closing Time"
   },
   {
-   "fieldname": "pricing",
-   "fieldtype": "Currency",
-   "label": "Pricing Per Person"
-  },
-  {
    "fieldname": "days_open",
    "fieldtype": "Data",
    "label": "Days Open"
   },
   {
+   "allow_in_quick_entry": 1,
    "fieldname": "tags_table_multiselect",
-   "fieldtype": "Data",
-   "label": "Tags (table multiselect Activity_tag_link)"
+   "fieldtype": "Table MultiSelect",
+   "label": "Tags",
+   "options": "Activity_tag_link"
   },
   {
    "fieldname": "column_break_stmh",
    "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "address.city",
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fetch_from": "address.country",
+   "fieldname": "country",
+   "fieldtype": "Data",
+   "label": "Country"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Link",
+   "label": "Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "price_per_person",
+   "fieldtype": "Currency",
+   "label": "Pricing Per Person"
+  },
+  {
+   "fieldname": "activity_name",
+   "fieldtype": "Data",
+   "label": "Activity Name",
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-13 12:22:09.023003",
+ "modified": "2024-02-13 14:50:17.815346",
  "modified_by": "Administrator",
  "module": "Tourism Erp",
  "name": "Activity",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -91,5 +111,6 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
+ "title_field": "activity_name",
  "track_changes": 1
 }
