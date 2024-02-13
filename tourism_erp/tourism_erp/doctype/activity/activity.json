@@ -1,0 +1,95 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-02-13 12:06:31.579105",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "name1",
+  "location_link_city",
+  "pricing",
+  "duration",
+  "tags_table_multiselect",
+  "column_break_stmh",
+  "description",
+  "days_open",
+  "opening_time",
+  "closing_time"
+ ],
+ "fields": [
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "location_link_city",
+   "fieldtype": "Data",
+   "label": "Location (Link Address)"
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Duration",
+   "label": "Duration"
+  },
+  {
+   "fieldname": "opening_time",
+   "fieldtype": "Time",
+   "label": "Opening Time"
+  },
+  {
+   "fieldname": "closing_time",
+   "fieldtype": "Time",
+   "label": "Closing Time"
+  },
+  {
+   "fieldname": "pricing",
+   "fieldtype": "Currency",
+   "label": "Pricing Per Person"
+  },
+  {
+   "fieldname": "days_open",
+   "fieldtype": "Data",
+   "label": "Days Open"
+  },
+  {
+   "fieldname": "tags_table_multiselect",
+   "fieldtype": "Data",
+   "label": "Tags (table multiselect Activity_tag_link)"
+  },
+  {
+   "fieldname": "column_break_stmh",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-02-13 12:22:09.023003",
+ "modified_by": "Administrator",
+ "module": "Tourism Erp",
+ "name": "Activity",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
