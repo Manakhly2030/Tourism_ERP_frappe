@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class ActivityTag(Document):
+class TourismCustomerLink(Document):
 	pass

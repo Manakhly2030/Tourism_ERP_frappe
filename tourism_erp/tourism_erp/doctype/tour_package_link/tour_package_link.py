@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class ActivityTag(Document):
+class TourPackageLink(Document):
 	pass
