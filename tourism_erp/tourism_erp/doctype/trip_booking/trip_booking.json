@@ -1,0 +1,130 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-02-16 17:04:50.645783",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "primary_customer",
+  "manager",
+  "status",
+  "column_break_nypg",
+  "departure",
+  "arrival",
+  "section_break_vnsn",
+  "people_travelling",
+  "section_break_vvdp",
+  "packages",
+  "section_break_liup",
+  "transports",
+  "section_break_hige",
+  "hotel_bookings"
+ ],
+ "fields": [
+  {
+   "fieldname": "primary_customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Primary Customer",
+   "options": "Tourism Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "manager",
+   "fieldtype": "Link",
+   "label": "Manager",
+   "options": "User"
+  },
+  {
+   "fieldname": "packages",
+   "fieldtype": "Table",
+   "label": "Packages",
+   "options": "Tour Package Link"
+  },
+  {
+   "fieldname": "transports",
+   "fieldtype": "Table",
+   "label": "Transports",
+   "options": "Transportation"
+  },
+  {
+   "fieldname": "hotel_bookings",
+   "fieldtype": "Table",
+   "label": "Hotel Bookings",
+   "options": "Hotel Booking"
+  },
+  {
+   "fieldname": "departure",
+   "fieldtype": "Date",
+   "label": "Departure"
+  },
+  {
+   "fieldname": "arrival",
+   "fieldtype": "Date",
+   "label": "Arrival"
+  },
+  {
+   "fieldname": "people_travelling",
+   "fieldtype": "Table",
+   "label": "People Travelling",
+   "options": "Tourism Customer Link",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Paid\nUnpaid\nPending\nCompleted",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_nypg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_vnsn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_vvdp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_liup",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_hige",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-02-16 17:12:54.400077",
+ "modified_by": "Administrator",
+ "module": "Tourism Erp",
+ "name": "Trip Booking",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
