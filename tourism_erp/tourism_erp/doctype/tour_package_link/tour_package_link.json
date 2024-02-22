@@ -1,0 +1,42 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-02-16 16:42:33.141780",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "tour_package",
+  "duration_nd"
+ ],
+ "fields": [
+  {
+   "fieldname": "tour_package",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tour Package",
+   "options": "Tour Package",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "tour_package.duration",
+   "fieldname": "duration_nd",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Duration (N/D)",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-02-22 11:37:58.287842",
+ "modified_by": "Administrator",
+ "module": "Tourism Erp",
+ "name": "Tour Package Link",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,143 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{TP}{###}-{package_name}-({city},{country})",
+ "creation": "2024-02-14 10:46:56.449291",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "package_name",
+  "city",
+  "state",
+  "country",
+  "column_break_tgwp",
+  "status",
+  "duration",
+  "price",
+  "section_break_pnlo",
+  "activities",
+  "section_break_vxtv",
+  "description",
+  "column_break_ubka",
+  "itinerary"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "package_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Package Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "activities",
+   "fieldtype": "Table",
+   "in_filter": 1,
+   "label": "Activities",
+   "options": "Activity Link"
+  },
+  {
+   "fieldname": "itinerary",
+   "fieldtype": "Text Editor",
+   "label": "Itinerary"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Price",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "duration",
+   "fieldtype": "Data",
+   "hide_seconds": 1,
+   "in_filter": 1,
+   "in_list_view": 1,
+   "label": "Duration (N/D)"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Enabled\nDisabled",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_tgwp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_pnlo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_vxtv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "City",
+   "reqd": 1
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country",
+   "reqd": 1
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "fieldname": "column_break_ubka",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-02-22 12:05:18.884934",
+ "modified_by": "Administrator",
+ "module": "Tourism Erp",
+ "name": "Tour Package",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

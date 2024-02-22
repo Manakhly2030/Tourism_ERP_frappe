@@ -1,0 +1,149 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{activity_name}, {city}",
+ "creation": "2024-02-13 12:06:31.579105",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "activity_name",
+  "duration",
+  "price_per_person",
+  "address",
+  "city",
+  "state",
+  "country",
+  "column_break_stmh",
+  "description",
+  "tags_table_multiselect",
+  "days_open",
+  "opening_time",
+  "closing_time",
+  "booking_url_optional"
+ ],
+ "fields": [
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Duration",
+   "label": "Duration"
+  },
+  {
+   "fieldname": "opening_time",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "Opening Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "closing_time",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "Closing Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "days_open",
+   "fieldtype": "Table MultiSelect",
+   "label": "Days Open",
+   "options": "Days_link"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "tags_table_multiselect",
+   "fieldtype": "Table MultiSelect",
+   "label": "Tags",
+   "options": "Activity_tag_link"
+  },
+  {
+   "fieldname": "column_break_stmh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "address.city",
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "City",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "address.country",
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Country",
+   "options": "Country",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Link",
+   "label": "Address",
+   "options": "Address"
+  },
+  {
+   "default": "0",
+   "fieldname": "price_per_person",
+   "fieldtype": "Currency",
+   "label": "Pricing Per Person (Approx)"
+  },
+  {
+   "fieldname": "activity_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Activity Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "booking_url_optional",
+   "fieldtype": "Attach",
+   "label": "Booking URL (Optional)"
+  },
+  {
+   "fetch_from": "address.state",
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-02-21 15:39:56.998684",
+ "modified_by": "Administrator",
+ "module": "Tourism Erp",
+ "name": "Activity",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "activity_name",
+ "track_changes": 1
+}
