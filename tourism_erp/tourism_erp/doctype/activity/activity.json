@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:activity_name",
+ "autoname": "format:{activity_name}, {city}",
  "creation": "2024-02-13 12:06:31.579105",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -11,6 +11,7 @@
   "price_per_person",
   "address",
   "city",
+  "state",
   "country",
   "column_break_stmh",
   "description",
@@ -66,15 +67,24 @@
    "fetch_from": "address.city",
    "fieldname": "city",
    "fieldtype": "Data",
+   "in_filter": 1,
    "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "City",
    "reqd": 1
   },
   {
    "fetch_from": "address.country",
    "fieldname": "country",
-   "fieldtype": "Data",
-   "label": "Country"
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Country",
+   "options": "Country",
+   "reqd": 1
   },
   {
    "fieldname": "address",
@@ -100,15 +110,22 @@
    "fieldname": "booking_url_optional",
    "fieldtype": "Attach",
    "label": "Booking URL (Optional)"
+  },
+  {
+   "fetch_from": "address.state",
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-13 16:50:32.157633",
+ "modified": "2024-02-21 15:39:56.998684",
  "modified_by": "Administrator",
  "module": "Tourism Erp",
  "name": "Activity",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

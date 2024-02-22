@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{first_name} {last_name} {dob}",
  "creation": "2024-02-13 15:33:28.977223",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -8,9 +9,11 @@
   "customer_details_section",
   "first_name",
   "last_name",
-  "age",
+  "full_name",
+  "column_break_hilt",
   "contact_information",
-  "amended_from",
+  "dob",
+  "age",
   "customer_documents_section",
   "document",
   "customer_preferences_section",
@@ -35,8 +38,7 @@
    "fieldname": "age",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "Age",
-   "reqd": 1
+   "label": "Age"
   },
   {
    "fieldname": "customer_details_section",
@@ -50,16 +52,6 @@
    "label": "Contact Information",
    "options": "Contact Information",
    "reqd": 1
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Tourism Customer",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
   },
   {
    "fieldname": "customer_documents_section",
@@ -90,15 +82,31 @@
    "fieldtype": "Table MultiSelect",
    "label": "Special Requirements",
    "options": "Preference Link"
+  },
+  {
+   "fieldname": "dob",
+   "fieldtype": "Date",
+   "label": "DOB",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_hilt",
+   "fieldtype": "Column Break",
+   "read_only": 1
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name"
   }
  ],
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
  "links": [],
- "modified": "2024-02-14 11:00:09.710736",
+ "modified": "2024-02-19 11:03:32.612908",
  "modified_by": "Administrator",
  "module": "Tourism Erp",
  "name": "Tourism Customer",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -111,7 +119,6 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
-   "submit": 1,
    "write": 1
   }
  ],

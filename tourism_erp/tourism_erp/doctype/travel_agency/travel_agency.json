@@ -1,15 +1,19 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{agency_name}",
  "creation": "2024-02-14 10:39:35.342164",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "agency_name",
-  "contact_information",
   "address",
   "license_number",
-  "agency_website"
+  "agency_website",
+  "column_break_felc",
+  "contact_information",
+  "contact_no",
+  "email"
  ],
  "fields": [
   {
@@ -40,14 +44,31 @@
    "fieldname": "agency_website",
    "fieldtype": "Data",
    "label": "Agency Website"
+  },
+  {
+   "fieldname": "column_break_felc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "contact_information.primary_contact_no",
+   "fieldname": "contact_no",
+   "fieldtype": "Data",
+   "label": "Contact No."
+  },
+  {
+   "fetch_from": "contact_information.primary_email_id",
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-14 10:43:15.826352",
+ "modified": "2024-02-22 12:20:38.860533",
  "modified_by": "Administrator",
  "module": "Tourism Erp",
  "name": "Travel Agency",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

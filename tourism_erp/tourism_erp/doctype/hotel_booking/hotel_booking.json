@@ -21,6 +21,7 @@
   {
    "fieldname": "hotel",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Hotel",
    "options": "Accommodation"
   },
@@ -47,7 +48,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-02-13 15:46:51.843520",
+ "modified": "2024-02-22 10:31:47.418896",
  "modified_by": "Administrator",
  "module": "Tourism Erp",
  "name": "Hotel Booking",

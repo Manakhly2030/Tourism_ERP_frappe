@@ -1,21 +1,24 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{TP}{###}-{package_name}-({city},{country})",
  "creation": "2024-02-14 10:46:56.449291",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "package_name",
-  "destination",
-  "price",
+  "city",
+  "state",
+  "country",
   "column_break_tgwp",
   "status",
   "duration",
+  "price",
   "section_break_pnlo",
   "activities",
   "section_break_vxtv",
   "description",
-  "section_break_tcze",
+  "column_break_ubka",
   "itinerary"
  ],
  "fields": [
@@ -31,16 +34,6 @@
    "fieldname": "description",
    "fieldtype": "Text Editor",
    "label": "Description"
-  },
-  {
-   "allow_in_quick_entry": 1,
-   "fieldname": "destination",
-   "fieldtype": "Data",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Destination",
-   "reqd": 1
   },
   {
    "fieldname": "activities",
@@ -67,11 +60,11 @@
   {
    "allow_in_quick_entry": 1,
    "fieldname": "duration",
-   "fieldtype": "Duration",
+   "fieldtype": "Data",
    "hide_seconds": 1,
    "in_filter": 1,
    "in_list_view": 1,
-   "label": "Duration"
+   "label": "Duration (N/D)"
   },
   {
    "fieldname": "status",
@@ -96,16 +89,39 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "section_break_tcze",
-   "fieldtype": "Section Break"
+   "allow_in_quick_entry": 1,
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "City",
+   "reqd": 1
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country",
+   "reqd": 1
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "fieldname": "column_break_ubka",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-16 16:26:31.949362",
+ "modified": "2024-02-22 12:05:18.884934",
  "modified_by": "Administrator",
  "module": "Tourism Erp",
  "name": "Tour Package",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
