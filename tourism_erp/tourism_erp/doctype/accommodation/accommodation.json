@@ -8,6 +8,7 @@
  "field_order": [
   "details_section",
   "name1",
+  "category",
   "rooms_available",
   "column_break_sgtt",
   "status",
@@ -15,8 +16,10 @@
   "contact_information_section",
   "address",
   "city",
+  "state",
   "country",
   "column_break_zcmg",
+  "contact_information",
   "phone",
   "email",
   "route"
@@ -43,13 +46,13 @@
   },
   {
    "fetch_from": "address.city",
-   "fetch_if_empty": 1,
    "fieldname": "city",
    "fieldtype": "Data",
    "in_filter": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "City"
+   "label": "City",
+   "read_only": 1
   },
   {
    "fieldname": "photos",
@@ -59,13 +62,13 @@
   },
   {
    "fetch_from": "address.country",
-   "fetch_if_empty": 1,
    "fieldname": "country",
    "fieldtype": "Data",
    "in_filter": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Country"
+   "label": "Country",
+   "read_only": 1
   },
   {
    "fieldname": "details_section",
@@ -101,7 +104,7 @@
    "options": "Room Type Link"
   },
   {
-   "fetch_from": "address.email_id",
+   "fetch_from": "contact_information.primary_email_id",
    "fetch_if_empty": 1,
    "fieldname": "email",
    "fieldtype": "Data",
@@ -109,25 +112,47 @@
    "label": "Email"
   },
   {
-   "allow_in_quick_entry": 1,
-   "fetch_from": "address.phone",
+   "fetch_from": "contact_information.primary_contact_no",
    "fetch_if_empty": 1,
    "fieldname": "phone",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Phone",
-   "reqd": 1
+   "label": "Phone"
   },
   {
    "fieldname": "route",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Route"
+  },
+  {
+   "fetch_from": "address.state",
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "State",
+   "read_only": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "contact_information",
+   "fieldtype": "Link",
+   "label": "Contact Information",
+   "options": "Contact Information",
+   "reqd": 1
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Rating",
+   "label": "Category"
   }
  ],
  "has_web_view": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-22 10:53:30.616237",
+ "modified": "2024-02-26 14:32:05.070950",
  "modified_by": "Administrator",
  "module": "Tourism Erp",
  "name": "Accommodation",
