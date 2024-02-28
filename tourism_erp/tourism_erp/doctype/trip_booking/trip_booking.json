@@ -61,8 +61,7 @@
    "fieldname": "people_travelling",
    "fieldtype": "Table",
    "label": "People Travelling",
-   "options": "Tourism Customer Link",
-   "reqd": 1
+   "options": "Tourism Customer Link"
   },
   {
    "fieldname": "status",
@@ -114,7 +113,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-22 12:13:40.138991",
+ "modified": "2024-02-28 12:35:51.432107",
  "modified_by": "Administrator",
  "module": "Tourism Erp",
  "name": "Trip Booking",
