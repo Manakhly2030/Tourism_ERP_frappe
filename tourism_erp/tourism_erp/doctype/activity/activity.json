@@ -13,6 +13,7 @@
   "city",
   "state",
   "country",
+  "age",
   "column_break_stmh",
   "description",
   "tags_table_multiselect",
@@ -117,11 +118,22 @@
    "fieldtype": "Data",
    "label": "State",
    "reqd": 1
+  },
+  {
+   "description": "Age eligibility for Activity",
+   "fieldname": "age",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Age",
+   "options": "Applicable for all\nAbove (5+)\nAbove (18)\nGeneral (Bellow 60)\nKids Zone (2-5)\nAdult Zone (18-35)",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-21 15:39:56.998684",
+ "modified": "2024-03-04 12:09:56.114045",
  "modified_by": "Administrator",
  "module": "Tourism Erp",
  "name": "Activity",
