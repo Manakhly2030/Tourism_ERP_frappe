@@ -6,10 +6,24 @@ from frappe.model.document import Document
 
 
 class TripBooking(Document):
-    pass
+    def validate(self):
+        self.validate_dates()
+
+    def validate_dates(self):
+        if self.from_date > self.to_date:
+            frappe.throw("From Date cannot be greater than To Date")
+
+        for transport in self.transports:
+            if transport.departure >= transport.arrival:
+                frappe.throw("Transport: Departure Date cannot be greater than Arrival Date")
+
+        for hotel_booking in self.hotel_bookings:
+            if hotel_booking.check_in >= hotel_booking.check_out:
+                frappe.throw("Hotel Booking: Check In Date cannot be greater than Check Out Date")
 
 
 @frappe.whitelist()
+@frappe.validate_and_sanitize_search_inputs
 def get_hotel_room_types(doctype, txt, searchfield, start, page_len, filters):
     hotel = filters.get("hotel")
 
@@ -27,3 +41,34 @@ def get_hotel_room_types(doctype, txt, searchfield, start, page_len, filters):
                          LIMIT %s OFFSET %s
                          """,
                          (tuple(allowed_rooms), "%%%s%%" % txt, page_len, start))
+
+
+@frappe.whitelist()
+@frappe.validate_and_sanitize_search_inputs
+def get_hotels(doctype, txt, searchfield, start, page_len, filters):
+    city = filters.get('city')
+    country = filters.get("country")
+
+    # Convert filters to tuples
+    if isinstance(city, str):
+        city_filter = (city, )
+        country_filter = (country, )
+    else:
+        city_filter = tuple(city)
+        country_filter = tuple(country)
+
+    # Return a query for filtering hotels
+    if not city or not country:
+        return frappe.db.sql("""
+                         SELECT name, name1
+                         FROM `tabAccommodation`
+                         WHERE `tabAccommodation`.name1 LIKE %s
+                         LIMIT %s OFFSET %s
+                         """, ("%%%s%%" % txt, page_len, start))
+
+    return frappe.db.sql("""
+                         SELECT name, name1
+                         FROM `tabAccommodation`
+                         WHERE `tabAccommodation`.city IN %s AND `tabAccommodation`.country IN %s AND `tabAccommodation`.name1 LIKE %s
+                         LIMIT %s OFFSET %s
+                         """, (city_filter, country_filter, "%%%s%%" % txt, page_len, start))

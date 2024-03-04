@@ -45,12 +45,14 @@
   {
    "fieldname": "primary_contact_no",
    "fieldtype": "Data",
-   "label": "Primary Contact No"
+   "label": "Primary Contact No",
+   "read_only": 1
   },
   {
    "fieldname": "primary_email_id",
    "fieldtype": "Data",
-   "label": "Primary Email ID"
+   "label": "Primary Email ID",
+   "read_only": 1
   },
   {
    "fieldname": "first_name",
@@ -81,7 +83,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-16 17:57:43.179386",
+ "modified": "2024-03-04 12:26:03.172504",
  "modified_by": "Administrator",
  "module": "Tourism Erp",
  "name": "Contact Information",
