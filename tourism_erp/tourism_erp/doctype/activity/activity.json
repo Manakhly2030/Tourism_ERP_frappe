@@ -127,13 +127,13 @@
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Age",
-   "options": "Applicable for all\nAbove (5+)\nAbove (18)\nGeneral (Bellow 60)\nKids Zone (2-5)\nAdult Zone (18-35)",
+   "options": "Applicable for all\nAbove (5+)\nAbove (18)\nGeneral (Below 60)\nKids Zone (2-5)\nAdult Zone (18-35)",
    "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-04 12:09:56.114045",
+ "modified": "2024-03-05 10:44:29.359913",
  "modified_by": "Administrator",
  "module": "Tourism Erp",
  "name": "Activity",
