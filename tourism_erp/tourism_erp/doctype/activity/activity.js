@@ -4,8 +4,10 @@
 frappe.ui.form.on("Activity", {
 	refresh(frm) {
     }, 
+
        // Duration
         validate: function (frm){
+
         if (frm.doc.duration <= 0) {
             frappe.msgprint("Duration must be set");
             frappe.validated = false;
@@ -19,21 +21,28 @@ frappe.ui.form.on("Activity", {
             return;
         }
 
-        Description
+        // Description
         if (frm.doc.description && frm.doc.description.length > 1000){
             frappe.msgprint("Description is too long. Maximum 1000 characters allowed.");
             frappe.validated = false;
             return;
         }
 
-    //     //Opening/Closing Time
-    
-     var openingTime = frm.doc.opening_time;
-        var closingTime = frm.doc.closing_time;
+        if (!frm.doc.opening_time || !frm.doc.closing_time) {
+            frappe.msgprint("Opening and closing times are required");
+            frappe.validated = false;
+            return;
+        }
+
+        if (frm.doc.opening_time >= frm.doc.closing_time) {
+            frappe.msgprint("Closing time must be after opening time");
+            frappe.validated = false;
+            return;
+        }
 
         // Extract hour parts from opening and closing times
-        var openingHour = parseInt(openingTime.split(':')[0], 10);
-        var closingHour = parseInt(closingTime.split(':')[0], 10);
+        var openingHour = parseInt(frm.doc.opening_time.split(':')[0], 10);
+        var closingHour = parseInt(frm.doc.closing_time.split(':')[0], 10);
 
         // Check if opening hour is strictly equal to closing hour
         if (openingHour === closingHour) {
@@ -41,21 +50,8 @@ frappe.ui.form.on("Activity", {
             frappe.validated = false;
             return;
         }
-        if (openingTime >= closingTime) {
-            frappe.msgprint("Closing time must be after Opening time");
-            frappe.validated = false;
-            return;
-        }
-    
-        // if (frm.doc.opening_time === frm.doc.closing_time) {
-        //     frappe.msgprint("Opening and closing times cannot be the same");
-        //     frappe.validated = false;
-        //     return;
-        // }
-    },
-         
-    
 
+    },
     before_save: function(frm) {
         // Activity Name validation
         var activityName = frm.doc.activity_name;
