@@ -15,12 +15,13 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Tag Name",
+   "reqd": 1,
    "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-13 16:48:45.942446",
+ "modified": "2024-03-05 10:36:46.563436",
  "modified_by": "Administrator",
  "module": "Tourism Erp",
  "name": "Activity Tag",
