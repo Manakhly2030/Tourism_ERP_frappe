@@ -13,6 +13,7 @@
   "from_date",
   "to_date",
   "manager",
+  "agent_id",
   "section_break_vnsn",
   "people_travelling",
   "section_break_vvdp",
@@ -37,7 +38,8 @@
    "fieldname": "manager",
    "fieldtype": "Link",
    "label": "Travel Agency",
-   "options": "Travel Agency"
+   "options": "Travel Agency",
+   "reqd": 1
   },
   {
    "fieldname": "packages",
@@ -96,12 +98,14 @@
   {
    "fieldname": "from_date",
    "fieldtype": "Date",
-   "label": "From Date"
+   "label": "From Date",
+   "reqd": 1
   },
   {
    "fieldname": "to_date",
    "fieldtype": "Date",
-   "label": "To Date"
+   "label": "To Date",
+   "reqd": 1
   },
   {
    "fetch_from": "primary_customer.full_name",
@@ -109,11 +113,20 @@
    "fieldtype": "Data",
    "label": "Full Name",
    "read_only": 1
+  },
+  {
+   "fetch_from": "manager.agent_id",
+   "fetch_if_empty": 1,
+   "fieldname": "agent_id",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Agent ID",
+   "options": "User"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-28 12:35:51.432107",
+ "modified": "2024-03-19 12:55:31.862504",
  "modified_by": "Administrator",
  "module": "Tourism Erp",
  "name": "Trip Booking",
