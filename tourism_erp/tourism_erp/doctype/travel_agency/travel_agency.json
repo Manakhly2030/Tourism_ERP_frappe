@@ -53,18 +53,20 @@
    "fetch_from": "contact_information.primary_contact_no",
    "fieldname": "contact_no",
    "fieldtype": "Data",
-   "label": "Contact No."
+   "label": "Contact No.",
+   "read_only": 1
   },
   {
    "fetch_from": "contact_information.primary_email_id",
    "fieldname": "email",
    "fieldtype": "Data",
-   "label": "Email"
+   "label": "Email",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-22 12:20:38.860533",
+ "modified": "2024-03-19 13:03:19.758493",
  "modified_by": "Administrator",
  "module": "Tourism Erp",
  "name": "Travel Agency",
