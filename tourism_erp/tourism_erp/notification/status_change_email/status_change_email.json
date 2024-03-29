@@ -1,33 +1,30 @@
 {
  "attach_print": 0,
  "channel": "Email",
- "creation": "2024-03-19 12:56:35.823724",
+ "creation": "2024-03-27 18:08:48.232670",
  "days_in_advance": 0,
  "docstatus": 0,
  "doctype": "Notification",
  "document_type": "Trip Booking",
- "enabled": 0,
+ "enabled": 1,
  "event": "Value Change",
  "idx": 0,
  "is_standard": 1,
- "message": "<p>Add your message here</p>\n",
- "message_type": "Markdown",
- "modified": "2024-03-27 18:38:02.296661",
+ "message": "<h3>{{ doc.name }} - {{ doc.status }}</h3>\n\n<p>Trip Booking {{ doc.name }} status has changed to {{ doc.status }}. Please take necessary action.</p>\n\n<!-- show last comment -->\n{% if comments %}\nLast comment: {{ comments[-1].comment }} by {{ comments[-1].by }}\n{% endif %}\n\n<h4>Details</h4>\n\n<ul>\n<li>Customer: {{ doc.primary_customer }}\n</ul>\n",
+ "message_type": "HTML",
+ "modified": "2024-03-29 16:56:25.921964",
  "modified_by": "Administrator",
  "module": "Tourism Erp",
- "name": "Test",
+ "name": "Status Change Email",
  "owner": "Administrator",
  "recipients": [
   {
    "receiver_by_document_field": "agent_id"
-  },
-  {
-   "receiver_by_role": "Administrator"
   }
  ],
  "send_system_notification": 1,
  "send_to_all_assignees": 0,
- "sender": "Mailgun Outbox",
+ "sender": "Postmaster",
  "sender_email": "postmaster@sandboxacd64eb0d2fd4a45b19a76eae4a11c3f.mailgun.org",
  "subject": "{{ doc.name }} changed to {{ doc.status }}",
  "value_changed": "status"

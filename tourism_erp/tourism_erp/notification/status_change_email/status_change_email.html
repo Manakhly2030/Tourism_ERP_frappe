@@ -1,0 +1,14 @@
+<h3>{{ doc.name }} - {{ doc.status }}</h3>
+
+<p>Trip Booking {{ doc.name }} status has changed to {{ doc.status }}. Please take necessary action.</p>
+
+<!-- show last comment -->
+{% if comments %}
+Last comment: {{ comments[-1].comment }} by {{ comments[-1].by }}
+{% endif %}
+
+<h4>Details</h4>
+
+<ul>
+<li>Customer: {{ doc.primary_customer }}
+</ul>
